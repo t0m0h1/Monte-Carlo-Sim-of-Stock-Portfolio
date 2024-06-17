@@ -30,3 +30,6 @@ stock_list = [stock + '.AX' for stock in stock_list]
 end_date = dt.datetime.now()
 start_date = end_date - dt.timedelta(days=365)
 # time range for the simulation is 1 year
+
+mean_returns, cov_matrix = get_data(stock_list, start_date, end_date)
+print(mean_returns)
