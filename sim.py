@@ -46,6 +46,8 @@ timeframe = 100 # number of days to simulate
 mean_m = np.full(shape=(timeframe, len(weights)), fill_value=mean_returns) # mean returns matrix
 mean_m = mean_m.T # transpose the matrix
 
+initial_investment = 10000
+
 portfolio = np.full(shape=(timeframe, num_sims), fill_value=0.0)
 
 for i in range(0, num_sims):
@@ -54,3 +56,10 @@ for i in range(0, num_sims):
     daily_returns = mean_m + np.inner(lower, samples)
 
     portfolio[:, i] = np.cumprod(np.inner(weights, daily_returns.T) + 1)
+
+
+plt.plot(portfolio)
+plt.ylabel('Portfolio Value')
+plt.xlabel('Time')
+plt.title('Monte Carlo Simulation of Portfolio Value')
+plt.show()
