@@ -36,3 +36,15 @@ print(mean_returns)
 
 weights = np.random.random(len(mean_returns))
 weights = weights / np.sum(weights) # normalise the weights
+# print(weights)
+
+
+
+# Monte Carlo Simulation
+num_sims = 100
+timeframe = 100 # number of days to simulate
+mean_m = np.full(shape=(timeframe, len(weights)), fill_value=mean_returns) # mean returns matrix
+
+
+
+for i in range(0, num_sims):
