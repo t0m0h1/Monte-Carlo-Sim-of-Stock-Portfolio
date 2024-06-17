@@ -26,3 +26,7 @@ def get_data(stocks, start_date, end_date):
 stock_list = ['AAPL', 'AMZN', 'MSFT', 'GOOGL', 'FB', 'TSLA', 'NVDA', 'AMD', 'INTC', 'CSCO']
 # add the extension '.AX' to the stock_list to get the Australian stock data
 stock_list = [stock + '.AX' for stock in stock_list]
+
+end_date = dt.datetime.now()
+start_date = end_date - dt.timedelta(days=365)
+# time range for the simulation is 1 year
